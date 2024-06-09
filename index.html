@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="etch-a-sketch.css">
 </head>
 <body>
-    <button>edit size</button>
+    
     <div class="show">
         <label>y-axis: </label>
         <input>
@@ -15,6 +15,33 @@
         <input>
     </div>
     <div class="grid-container"></div>
+
+    <section class="modal hidden">
+        <div class="flex">
+            <h3>Edit the size of the grid</h3>
+            <button class="btn-close">X</button>
+        </div>
+        <div class="container-container">
+            <div class="y-axis-container">
+                <h4>y-axis: </h4>
+                <p class="y-axis-text">0</p>
+                <button class="y-axis-sub">-</button>
+                <button class="y-axis-add">+</button>
+            </div>
+            <div class="x-axis-container">
+                <h4>x-axis: </h4>
+                <p class="x-axis-text">0</p>
+                <button class="x-axis-sub">-</button>
+                <button class="x-axis-add">+</button>
+            </div>
+        </div>
+             <button class="apply-button">apply changes</button>
+       
+       
+    </section>
+    <div class="overlay hidden"></div>
+    <button class="btn btn-open">open</button>
+    <script src="javascript.js"></script>
 
     <script src="javascript.js"></script>
 </body>
