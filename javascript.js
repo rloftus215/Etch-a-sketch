@@ -9,6 +9,9 @@ const addX = document.querySelector('.x-axis-add');
 const subX = document.querySelector('.x-axis-sub');
 const xAxisText = document.querySelector('.x-axis-text');
 const yAxisText = document.querySelector('.y-axis-text');
+const applyButton = document.querySelector('.apply-button');
+const body = document.querySelector('body');
+
 let yAxisSize = 0;
 let xAxisSize = 0;
 
@@ -85,3 +88,22 @@ addX.addEventListener('click', addToX);
 subX.addEventListener('click', subToX);
 addY.addEventListener('click', addToY);
 subY.addEventListener('click', subToY);
+
+applyButton.addEventListener('mousedown', () => {
+    document.querySelector("#grid-container").remove();
+});
+
+applyButton.addEventListener('mouseup', () => {
+    elementCount = yAxisSize * xAxisSize;
+    const gridContainer = document.createElement('div');
+    gridContainer.setAttribute('class', 'grid-container');
+    gridContainer.setAttribute('id', 'grid-container');
+    body.appendChild(gridContainer);
+    for (let i = 0; i < elementCount; i++) {
+        const div = document.createElement('div');
+        div.setAttribute('class', 'grid-item');
+        gridContainer.appendChild(div);
+        div.addEventListener('mouseover', () => {
+        div.setAttribute('style', 'background-color: red');
+    });
+}});
