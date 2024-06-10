@@ -53,7 +53,7 @@ document.addEventListener('keydown', function (e) {
 
 
 function addToX() {
-    if (xAxisSize < 60) {
+    if (xAxisSize < 40) {
         xAxisSize += 10;
         xAxisText.innerText = `${xAxisSize}`;
     }
@@ -69,7 +69,7 @@ function subToX() {
 
 
 function addToY() {
-    if (yAxisSize < 60) {
+    if (yAxisSize < 40) {
         yAxisSize += 10;
         yAxisText.innerText = `${yAxisSize}`;
     }

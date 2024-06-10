@@ -1,7 +1,7 @@
 .grid-container{
     display: flex;
     flex-wrap: wrap;
-    width: 100vw;
+    width: 90vw;
     margin: auto
 }
 
