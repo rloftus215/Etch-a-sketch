@@ -35,7 +35,6 @@ openModalBtn.addEventListener('click', openModal);
 function closeModal() {
     modal.classList.add('hidden');
     overlay.classList.add('hidden');
-   
 }
 
 
@@ -55,8 +54,6 @@ function addToX() {
         xAxisSize += 10;
         xAxisText.innerText = `${xAxisSize}`;
     }
-
-
 };
 
 
@@ -88,7 +85,3 @@ addX.addEventListener('click', addToX);
 subX.addEventListener('click', subToX);
 addY.addEventListener('click', addToY);
 subY.addEventListener('click', subToY);
-
-
-
-
