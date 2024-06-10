@@ -12,8 +12,8 @@ const yAxisText = document.querySelector('.y-axis-text');
 const applyButton = document.querySelector('.apply-button');
 const body = document.querySelector('body');
 
-let yAxisSize = 0;
-let xAxisSize = 0;
+let yAxisSize = 10;
+let xAxisSize = 10;
 
 
 let elementCount = 256;
@@ -61,7 +61,7 @@ function addToX() {
 
 
 function subToX() {
-    if (xAxisSize > 0) {
+    if (xAxisSize > 10) {
         xAxisSize -= 10;
         xAxisText.innerText = `${xAxisSize}`;
     }
@@ -77,7 +77,7 @@ function addToY() {
 
 
 function subToY() {
-    if (yAxisSize > 0) {
+    if (yAxisSize > 10) {
         yAxisSize -= 10;
         yAxisText.innerText = `${yAxisSize}`;
     }
