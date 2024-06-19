@@ -3,17 +3,14 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const openModalBtn = document.querySelector('.btn-open');
 const closeModalBtn = document.querySelector('.btn-close');
-const addY = document.querySelector('.y-axis-add');
-const subY = document.querySelector('.y-axis-sub');
-const addX = document.querySelector('.x-axis-add');
-const subX = document.querySelector('.x-axis-sub');
-const xAxisText = document.querySelector('.x-axis-text');
-const yAxisText = document.querySelector('.y-axis-text');
 const applyButton = document.querySelector('.apply-button');
 const body = document.querySelector('body');
+const gridAdd = document.querySelector('.add-to-grid');
+const gridSub = document.querySelector('.sub-to-grid');
+const gridText = document.querySelector('.grid-text')
 
-let yAxisSize = 10;
-let xAxisSize = 10;
+
+let gridSize = 50;
 
 
 let elementCount = 256;
@@ -52,49 +49,31 @@ document.addEventListener('keydown', function (e) {
 })
 
 
-function addToX() {
-    if (xAxisSize < 60) {
-        xAxisSize += 10;
-        xAxisText.innerText = `${xAxisSize}`;
+function addToGrid() {
+    if (gridSize < 1000) {
+        gridSize += 50;
+        gridText.innerText = `${gridSize}`;
     }
 };
 
 
-function subToX() {
-    if (xAxisSize > 10) {
-        xAxisSize -= 10;
-        xAxisText.innerText = `${xAxisSize}`;
+function subToGrid() {
+    if (gridSize > 50) {
+        gridSize -= 50;
+        gridText.innerText = `${gridSize}`;
     }
 }
 
+gridAdd.addEventListener('click', addToGrid);
+gridSub.addEventListener('click', subToGrid);
 
-function addToY() {
-    if (yAxisSize < 60) {
-        yAxisSize += 10;
-        yAxisText.innerText = `${yAxisSize}`;
-    }
-}
-
-
-function subToY() {
-    if (yAxisSize > 10) {
-        yAxisSize -= 10;
-        yAxisText.innerText = `${yAxisSize}`;
-    }
-}
-
-
-addX.addEventListener('click', addToX);
-subX.addEventListener('click', subToX);
-addY.addEventListener('click', addToY);
-subY.addEventListener('click', subToY);
 
 applyButton.addEventListener('mousedown', () => {
     document.querySelector("#grid-container").remove();
 });
 
 applyButton.addEventListener('mouseup', () => {
-    elementCount = yAxisSize * xAxisSize;
+    elementCount = gridSize;
     const gridContainer = document.createElement('div');
     gridContainer.setAttribute('class', 'grid-container');
     gridContainer.setAttribute('id', 'grid-container');
